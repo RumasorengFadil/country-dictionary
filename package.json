@@ -1,0 +1,20 @@
+{
+  "name": "1.-country-dictionary",
+  "version": "1.0.0",
+  "description": "Country Dictionary is web that is provide more than 200 countries infomation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "author": "Fadil Hijayat R.",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.29.0",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.11"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
+}
