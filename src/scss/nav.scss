@@ -1,30 +1,29 @@
-.nav{
+.header{
     display: flex;
     align-items: center;
     width : 100%;
     height: 3.2rem;
-    box-shadow: 0 0.5px 2px 0 rgba(#000000, 0.25);
+    box-shadow: 0 0.5px 2px 0 rgba($color-black, $alpha);
+}
 
-    &__item{
-        flex-grow: 1;
-    }
-    &__logo{
-        height: 3rem;
-        flex-grow: 0;
-    }
+    
 
-    //search view
-    &__search{
-        position: relative;
-        display: flex;
-        // justify-content: flex-start;
-        // background-color: rebeccapurple;
-    }
-    &__search-field{
+//search view
+.search-cn{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search{
+    position: relative;
+    width: max-content;
+
+    &__field{
         border: none;
         height: 1.8rem;
         width: 15rem;
-        background-color: #FFFFFF;
+        background-color: $color-white;
         border-radius: 2.5rem;
         margin-right: 0.3rem;
         background-image: url("/src/assets/icons/icon-search.svg");
@@ -34,38 +33,88 @@
         background-position-x: 0.63rem;
         font-size: 0.65rem;
     }
-    &__search-field::placeholder{
-        color: #B3B3B3;
+    &__field::placeholder{
+        color: $color-grey-light-1;
         font-size: 0.65rem;
     }
-    &__search-btn{
+    &__field:focus{
+        outline: none;
+    }
+    &__btn{
         all: unset;
-        background-color: #FFFFFF;
+        background-color: $color-white;
         border-radius: 2.5rem;
         width: 4rem;
         text-align: center;
         font-size: 0.65rem;
+        height: 1.8rem;
     }
-    &__search-field:focus{
-        outline: none;
-    }
-    &__search-result{
+    &__result{
         position: absolute;
-        top: 100%;
+        width: 15rem;
+        top: 2.5rem;
         left: 0;
         right: 0;
+        list-style: none;
+        background-color: $color-primary;
+        box-shadow: 0px 4px 8px 0 rgba($color-black, $alpha);
     }
+    &__result-link{
+        text-decoration: none;
+        padding: 0.7rem 0.6rem;
+        display: block;
+    }
+    &__result-data:hover{
+        background-color: $color-grey-light-2;
+        cursor: pointer;
+    }
+}
+
+    
     // bookmarks view
-    &__bookmarks{
+    .nav{
         display: flex;
+        align-items: center;
         justify-content: flex-end;
-        margin-right: 1.7rem;
-    }   
-    @media only screen and (min-width : 720px){
-        width: auto;
-        &__search{
-            // justify-content: flex-end;
-        }
+        flex-grow: 1;
+        position: relative;
         
+        &__text{
+            display: none;
+        }
+        &__icn-bookmarks{
+            height: 1.5rem;
+        }
+        &__btn-bookmarks{
+            margin-right: 1.7rem;
+            display: flex;
+            align-items: center;
+        }   
+        &__bookmarks-result{
+            position: fixed;
+            width: 11rem;
+            right: 0;
+            top: 3.2rem;   
+            background-color: $color-primary;         
+            list-style: none;
+            box-shadow: 0px 4px 8px 0 rgba($color-black, $alpha);
+        }
+        &__bookmarks-link{
+            text-decoration: none;
+            display: flex;
+            // color: $color-black;
+            // display: block;
+            padding: 0.6rem;
+        }
+        @media only screen and (min-width : 720px){
+            &__text{
+                display: inline;
+            }
+        }
     }
+  
+
+.logo{
+    height: 3rem;
+    flex-grow: 0;
 }
