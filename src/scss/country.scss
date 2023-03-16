@@ -1,0 +1,35 @@
+.country{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    box-shadow: 0 2px 4px 0 rgba($color-black, $alpha);
+    width: fit-content;
+    &__flag{
+        width: 19rem;
+    }
+    &__head{
+        display: flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+    }
+    &__icn-location,&__icn-bookmark{
+        margin-left: 0.16rem;
+        cursor: pointer;
+        height: $icon-size;
+    }
+    &__name{
+        flex-grow: 1;
+        font-size: 1.2rem;
+    }
+    &__region{
+        font-size: 0.9rem;
+    }
+    &__body{
+        padding: 0.6rem 1.2rem;
+    }
+    &__data{
+        list-style: none;
+        padding: 0.16rem;
+    }
+}

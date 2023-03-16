@@ -10,11 +10,11 @@
 
     <body>
         <header class="header">
-            <img class="logo" src="/src/assets/icons/logo-earth.svg" alt="">
+            <img class="header__logo" src="/src/assets/icons/logo-earth.svg" alt="">
             
             <div class="search-cn">
                 <div class="search" action="">
-                    <input class="search__field" type="search" placeholder="Search countries..." name="inputSearch" id="" autocomplete="off">
+                    <input class="search__field" type="search" placeholder="Search countries..." name="inputSearch" id="" autocomplete="autocomplete_off_randStrin">
                     <button class="search__btn">Search</button>
                     <ul class="search__result">
                         <!-- <div class="message">
@@ -33,26 +33,64 @@
                 </div>
             </div>
             
-            <nav class="nav">      
-                <div class="nav__btn-bookmarks">
-                    <img class="nav__icn-bookmarks" src="/src/assets/icons/icon-bookmarks.svg" alt="">
-                    <p class="nav__text">Bookmarks</p>
-                </div>          
-                <ul class="nav__bookmarks-result">
-                    <li class="nav__bookmarks-data">
-                        <a class="nav__bookmarks-link" href="#">
-                            <img class="nav__bookmarks-flag" src="/src/assets/icons/icon-idn.svg" alt="">
-                            <p>Indonesia <br> Asia</p>
-                            <p></p>
-                        </a>
-                    </li>
-                    <li class="nav__bookmarks-data">
-                        <a class="nav__bookmarks-link" href="#">
-                            fadil
-                        </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <div class="bookmarks">
+                            <div class="bookmarks__btn">
+                                <img class="bookmarks__icn" src="/src/assets/icons/icon-bookmarks.svg" alt="">
+                                <p class="bookmarks__text">Bookmarks</p>
+                            </div> 
+
+                            <ul class="bookmarks__result">
+                                <!-- <li class="bookmarks__list">
+                                    <a class="bookmarks__link" href="#">
+                                        <figure class="bookmarks__fig">
+                                            <img class="bookmarks__flag" src="/src/assets/icons/icon-idn.svg" alt="">    
+                                            <figcaption>                                    
+                                                <p class="bookmarks__country">Indonesia</p>
+                                                <p class="bookmarks__region">Asia</p>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li> -->
+                                <div class="message">
+                                    <p>Bookmarks is empty</p>
+                                </div>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>
         </header>
+
+        <main class="main">
+            <article class="article hidden">
+                <h1 class="article__title"><span class="text-green">Country</span> Dictionary</h1>
+                <p class="article__text">Find information on over two hundred <br>countries here</p>
+                <video controls class="article__video" autoplay loop ="true" disablePictureInPicture disabledSaveVideoAs>
+                    <source src="/src/assets/images/earth.webm">
+                </video>
+            </article>
+
+            <div class="country">
+                <img class="country__flag" src="/src/assets/icons/icon-idn.svg" alt="">
+                <div class="country__head">
+                    <h2 class="country__name">Indonesia <br><span class="country__region">Asia</span></h2>
+                    <img class="country__icn-location" src="/src/assets/icons/icon-location.svg" alt="">
+                    <img class="country__icn-bookmark" src="/src/assets/icons/icon-bookmark-outline.svg" alt="">
+                </div>
+                <ul class="country__body">
+                    <li class="country__data">Borders       : <span class="country__borders">Malaysia,Timor Leste, Brunei</span></li>
+                    <li class="country__data">Capital       : <span class="country__capital">Jakarta</span></li>
+                    <li class="country__data">Continent     : <span class="country__continent">Asia</span></li>
+                    <li class="country__data">Currencies    : <span class="country__curr">Rupiah</span></li>
+                    <li class="country__data">Independent   : <span class="country__independent">Yes</span></li>
+                    <li class="country__data">Languages     : <span class="country__lang">Indonesia</span></li>
+                    <li class="country__data">Population    : <span class="country__popu">250jt</span></li>
+                    <li class="country__data">Car           : <span class="country__car">Right</span></li>
+                </ul>
+            </div>
+        </main>
     </body>
 </html>

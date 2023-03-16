@@ -1,23 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 $color-primary : #F5F5F5;
 $color-black : #000000; //box-shadow
-$color-white : #FFFFFF;
-$color-grey-light-1 : #B3B3B3;
-$color-grey-light-2 : #f9f5f3; //Hover
+$color-white : #FFFFFF; // search field
+$color-grey-light-1 : #B3B3B3; //Hover
+$color-grey-light-2 : #f9f5f3; 
 
+$icon-size : 1.5rem;
 $alpha : 0.25;
+$sm-device : 37.5rem; //600px
 $me-device : 45rem; //720px
 $lg-device : 60rem; //960px
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-weight: 400;
 }
 
 body{
     font-family: Montserrat, sans-serif;
     background-color: $color-primary;
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 
 html{

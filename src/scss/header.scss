@@ -1,14 +1,20 @@
+// header
 .header{
     display: flex;
     align-items: center;
     width : 100%;
     height: 3.2rem;
     box-shadow: 0 0.5px 2px 0 rgba($color-black, $alpha);
+
+    &__logo{
+        height: 3rem;
+        flex-grow: 0;
+    }
 }
 
     
 
-//search view
+//search
 .search-cn{
     flex-grow: 1;
     display: flex;
@@ -29,7 +35,7 @@
         background-image: url("/src/assets/icons/icon-search.svg");
         background-repeat: no-repeat;
         background-position: center;
-        padding-left: 3rem;
+        padding: 0 0.63rem 0 3rem;
         background-position-x: 0.63rem;
         font-size: 0.65rem;
     }
@@ -48,6 +54,7 @@
         text-align: center;
         font-size: 0.65rem;
         height: 1.8rem;
+        cursor: pointer;
     }
     &__result{
         position: absolute;
@@ -57,40 +64,59 @@
         right: 0;
         list-style: none;
         background-color: $color-primary;
+        z-index: 1;
         box-shadow: 0px 4px 8px 0 rgba($color-black, $alpha);
     }
     &__result-link{
         text-decoration: none;
         padding: 0.7rem 0.6rem;
         display: block;
+        font-size: 0.8rem;
     }
     &__result-data:hover{
-        background-color: $color-grey-light-2;
+        background-color: $color-grey-light-1;
         cursor: pointer;
     }
 }
 
-    
-    // bookmarks view
-    .nav{
+//nav  
+.nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    &__item{
+        
+    }
+    &__list{
+        list-style: none;
+    }
+}
+
+// bookmarks 
+    .bookmarks{
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        flex-grow: 1;
         position: relative;
+        width: max-content;
+        height: 3.2rem;
         
         &__text{
             display: none;
         }
-        &__icn-bookmarks{
-            height: 1.5rem;
+        &__icn{
+            height: $icon-size;
         }
-        &__btn-bookmarks{
+        &__btn{
             margin-right: 1.7rem;
             display: flex;
             align-items: center;
+            cursor: pointer;
         }   
-        &__bookmarks-result{
+        &__list{
+            cursor: pointer;
+        }
+        &__result{
             position: fixed;
             width: 11rem;
             right: 0;
@@ -98,13 +124,27 @@
             background-color: $color-primary;         
             list-style: none;
             box-shadow: 0px 4px 8px 0 rgba($color-black, $alpha);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
         }
-        &__bookmarks-link{
+        &__link{
             text-decoration: none;
+            color: $color-black;
+        }
+        &__fig{
+            align-items: center;
             display: flex;
-            // color: $color-black;
-            // display: block;
+        }
+        &__flag{
             padding: 0.6rem;
+        }
+        &:hover &__result{
+            visibility: visible;
+            opacity: 1;
+        }
+        &__list:hover {
+            background-color: $color-grey-light-1;
         }
         @media only screen and (min-width : 720px){
             &__text{
@@ -112,9 +152,6 @@
             }
         }
     }
-  
+    
 
-.logo{
-    height: 3rem;
-    flex-grow: 0;
-}
+

@@ -1,0 +1,27 @@
+.main{
+    // position: relative;
+}
+.article{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+
+    &__video::-webkit-media-controls-enclosure {
+        display:none !important;
+        pointer-events: none;
+    }
+
+    // &__video::webkit- {
+
+    // }
+    &__title{
+        padding: 0.5rem;
+        font-size:1.5rem;
+    }
+    &__text{
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
