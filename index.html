@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/src/scss/main.scss">
         <link rel="icon" href="/src/assets/images/logo.png">
+        <script type="module" refer src="/src/js/controller/Controller.js"></script>
     </head>
 
     <body>
@@ -54,6 +55,7 @@
                                         </figure>
                                     </a>
                                 </li> -->
+       
                                 <div class="message">
                                     <p>Bookmarks is empty</p>
                                 </div>
@@ -65,15 +67,16 @@
         </header>
 
         <main class="main">
-            <article class="article hidden">
+
+            <article class="article position-center hidden">
                 <h1 class="article__title"><span class="text-green">Country</span> Dictionary</h1>
                 <p class="article__text">Find information on over two hundred <br>countries here</p>
-                <video controls class="article__video" autoplay loop ="true" disablePictureInPicture disabledSaveVideoAs>
+                <video controls class="article__video" autoplay loop ="true" disablePictureInPicture disabledSaveVideoAs data-setup='{"userActions": {"doubleClick": false }}'>
                     <source src="/src/assets/images/earth.webm">
                 </video>
             </article>
 
-            <div class="country">
+            <div class="country position-center hidden">
                 <img class="country__flag" src="/src/assets/icons/icon-idn.svg" alt="">
                 <div class="country__head">
                     <h2 class="country__name">Indonesia <br><span class="country__region">Asia</span></h2>
@@ -91,6 +94,19 @@
                     <li class="country__data">Car           : <span class="country__car">Right</span></li>
                 </ul>
             </div>
+            
+            <div class="map position-center hidden">
+                <img class="map__arrow-left" src="/src/assets/icons/icon-arrow-left.svg" alt="">
+            </div>
         </main>
+
+        <footer class="footer">
+            <p class="footer__copyright">© Copyright By Fadil Hijayat R.
+               <br> Don’t claim as your own</p>
+        </footer>
+
+        <!-- <div class="spinner">
+            <img class="" src="/src/assets/icons/icon-spinner.svg" alt="">
+        </div> -->
     </body>
 </html>

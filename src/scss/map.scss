@@ -1,0 +1,12 @@
+.map{
+    box-shadow: 0 2px 4px 0 rgba($color-black, $alpha);
+    width: 20rem;
+    height: 32rem;
+
+    &__arrow-left{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+}

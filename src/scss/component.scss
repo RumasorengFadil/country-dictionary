@@ -1,16 +1,54 @@
-// merupakan komponen pesan
-.message{
-    height: 7.5rem;
+%center{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    &{
+        height: 7.5rem;
+    }
+}   
+
+.message,.error,.succes{
+    @extend %center;
 }
 
+.position-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .hidden{
     display: none;
 }
 .text-green{
     color: #14B624;
     font-weight: bold;
+}
+.spinner{
+    @extend %center;
+    text-align: center;
+
+    img{
+        animation: putar 2s infinite linear;
+        // animation-name: ;
+        // animation-duration: 0ms;
+        // animation-timing-function: ;
+        // animation-delay: ;
+        // animation-iteration-count: ;
+        // animation-direction: ; normal,alternate,reverse,alternate reverse
+        // animation-fill-mode: ; fordware(delfault), backward(berhenti di keadaan akhir)
+        // animation-play-state: ; running(jalan), paused(stop)
+    }
+}
+
+@keyframes putar{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
 }
