@@ -58,7 +58,7 @@ class Countries{
         }
     }
 
-    getState(){
+    getCountries(){
         return this._countries;
     }
 

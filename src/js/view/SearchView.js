@@ -13,11 +13,7 @@ class SearchView extends View{
     }
 
     _generateMarkup(){
-        return this._data.map(country => 
-            `<li class="search__result-data">
-            <a class="search__result-link" href="${country.name.common}">${country.name.common}</a>
-            </li>`
-        )
+        
     }
 
 }

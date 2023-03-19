@@ -1,4 +1,5 @@
 import searchView from "../view/SearchView";
+import autoCompleteView from "../view/autoCompleteView";
 import countries from "../model/Countries";
 
 
@@ -12,7 +13,8 @@ class Controller{
         //1. Load data
         await countries.loadData();
 
-        
+        //2. Render AutoComplete
+        autoCompleteView.render(countries);
 
     }
 
