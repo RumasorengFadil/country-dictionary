@@ -30,6 +30,11 @@
                         <li class="autocomplete__data">
                             <a class="autocomplete__link" href="#">Fadil</a>
                         </li> -->
+                        <div class="spinner">
+                            <svg>
+                                <use href="/src/assets/icons/icons.svg#icon-spinner"></use>
+                            </svg>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -42,7 +47,7 @@
                                 <img class="bookmarks__icn" src="/src/assets/icons/icon-bookmarks.svg" alt="">
                                 <p class="bookmarks__text">Bookmarks</p>
                             </div> 
-
+                            
                             <ul class="bookmarks__result">
                                 <!-- <li class="bookmarks__list">
                                     <a class="bookmarks__link" href="#">
@@ -65,10 +70,10 @@
                 </ul>
             </nav>
         </header>
-
+        
         <main class="main">
 
-            <article class="article position-center hidden">
+            <article class="article position-center">
                 <h1 class="article__title"><span class="text-green">Country</span> Dictionary</h1>
                 <p class="article__text">Find information on over two hundred <br>countries here</p>
                 <video controls class="article__video" autoplay loop ="true" disablePictureInPicture disabledSaveVideoAs data-setup='{"userActions": {"doubleClick": false }}'>
@@ -102,11 +107,13 @@
 
         <footer class="footer">
             <p class="footer__copyright">© Copyright By Fadil Hijayat R.
-               <br> Don’t claim as your own</p>
+            <br> Don’t claim as your own</p>
         </footer>
-
-        <!-- <div class="spinner">
-            <img class="" src="/src/assets/icons/icon-spinner.svg" alt="">
-        </div> -->
-    </body>
-</html>
+        <div class="overlay hidden"></div>
+            
+            <!-- <div class="spinner">
+                <img class="" src="/src/assets/icons/icon-spinner.svg" alt="">
+            </div> -->
+        </body>
+        </html>
+    

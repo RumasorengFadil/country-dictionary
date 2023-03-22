@@ -6,15 +6,20 @@ import countries from "../model/Countries";
 class Controller{
 
     constructor(){
-        searchView.addHandlerRenderAutoComplete(this.controlAutoComplete);
+        autoCompleteView.addHandlerRenderAutoComplete(this.controlAutoComplete);
+        autoCompleteView.addHandlerCloseAutoComplete();
+        autoCompleteView.addHandlerFillSearchField();
     }
 
-    async controlAutoComplete(){
-        //1. Load data
-        await countries.loadData();
+    async controlAutoComplete(keyw = ""){
+        // 1. Render spinner
+        // autoCompleteView.renderSpinner();
 
-        //2. Render AutoComplete
-        autoCompleteView.render(countries);
+        //2. Load data
+        await countries.loadData(keyw);
+
+        //3. Render AutoComplete
+        // autoCompleteView.render(countries);
 
     }
 

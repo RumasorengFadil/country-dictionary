@@ -3,7 +3,7 @@
 }
 .article{
     text-align: center;   
-
+    z-index: -1;
     &__video::-webkit-media-controls-enclosure {
         display:none !important;
         pointer-events: none;
