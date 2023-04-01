@@ -3,6 +3,9 @@
     width: 20rem;
     height: 32rem;
     
+    &__borders{
+        text-decoration: none;
+    }
     &__flag{
         width: 100%;
         box-shadow: 0 0.5px 1px 0px rgba($color-black, $alpha);
@@ -15,7 +18,8 @@
     &__icn-location,&__icn-bookmark{
         margin-left: 0.16rem;
         cursor: pointer;
-        height: $icon-size;
+        height: 1.5rem;
+        width: 1.5rem;
     }
     &__name{
         flex-grow: 1;

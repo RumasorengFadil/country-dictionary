@@ -4,12 +4,12 @@ class Countries{
 
   }
   
-  async loadData(keyw = ""){
+  async loadData(keyw){
     try{
       //Get data from session storage
       const dataSessionStorage = JSON.parse(sessionStorage.getItem("dataCountries"));
-      this._names = dataSessionStorage?.filter(name => name.includes(keyw));
-
+      this._names = dataSessionStorage?.filter(name => name.toLowerCase().includes(keyw));
+        
       if(dataSessionStorage) return;
 
       // get data from API
@@ -23,17 +23,19 @@ class Countries{
       // Save data into session storage
       sessionStorage.setItem("dataCountries", JSON.stringify(this._names));
 
-      for(let i = 0; i < 100000; i++){
-        console.log(i);
-      }
     }catch(err){
       console.error(err);
     }
   }
 
-    getNames(){
-        return this._names;
-    }
+  getNames(){
+      return this._names;
+  }
+  setAutocompVisible(visible){
+    if(!visible) return;
+    this._names = [];
+  }
+
 
 }
 

@@ -14,9 +14,9 @@
             <img class="header__logo" src="/src/assets/icons/logo-earth.svg" alt="">
             
             <div class="search-cn">
-                <div class="search" action="">
+                <form class="search" action="">
                     <input class="search__field" type="search" placeholder="Search countries..." name="inputSearch" id="" autocomplete="autocomplete_off_randStrin">
-                    <button class="search__btn">Search</button>
+                    <button type="submit" class="search__btn">Search</button>
                     <ul class="autocomplete">
                         <!-- <div class="message">
                             <p>Country not found, <br>please try again</p>
@@ -30,13 +30,13 @@
                         <li class="autocomplete__data">
                             <a class="autocomplete__link" href="#">Fadil</a>
                         </li> -->
-                        <div class="spinner">
+                        <!-- <div class="spinner">
                             <svg>
                                 <use href="/src/assets/icons/icons.svg#icon-spinner"></use>
                             </svg>
-                        </div>
+                        </div> -->
                     </ul>
-                </div>
+                </form>
             </div>
             
             <nav class="nav">
@@ -44,7 +44,9 @@
                     <li class="nav__item">
                         <div class="bookmarks">
                             <div class="bookmarks__btn">
-                                <img class="bookmarks__icn" src="/src/assets/icons/icon-bookmarks.svg" alt="">
+                                <svg class="bookmarks__icn">
+                                    <use href="/src/assets/icons/icons.svg#icon-bookmarks"></use>
+                                </svg>
                                 <p class="bookmarks__text">Bookmarks</p>
                             </div> 
                             
@@ -72,24 +74,32 @@
         </header>
         
         <main class="main">
-
             <article class="article position-center">
                 <h1 class="article__title"><span class="text-green">Country</span> Dictionary</h1>
                 <p class="article__text">Find information on over two hundred <br>countries here</p>
-                <video controls class="article__video" autoplay loop ="true" disablePictureInPicture disabledSaveVideoAs data-setup='{"userActions": {"doubleClick": false }}'>
+                
+                <video class="article__video" autoplay loop muted ="true" disablePictureInPicture controlsList="nofullscreen">
                     <source src="/src/assets/images/earth.webm">
                 </video>
             </article>
 
-            <div class="country position-center hidden">
+            <!-- <div class="country position-center">
                 <img class="country__flag" src="/src/assets/icons/icon-idn.svg" alt="">
                 <div class="country__head">
                     <h2 class="country__name">Indonesia <br><span class="country__region">Asia</span></h2>
-                    <img class="country__icn-location" src="/src/assets/icons/icon-location.svg" alt="">
-                    <img class="country__icn-bookmark" src="/src/assets/icons/icon-bookmark-outline.svg" alt="">
+                    <svg class="country__icn-location">
+                        <use href="/src/assets/icons/icons.svg#icon-loc"></use>
+                    </svg>
+                    <svg class="country__icn-bookmark">
+                        <use href="/src/assets/icons/icons.svg#icon-bookmark-outline"></use>
+                    </svg>
                 </div>
                 <ul class="country__body">
-                    <li class="country__data">Borders       : <span class="country__borders">Malaysia,Timor Leste, Brunei</span></li>
+                    <li class="country__data">Borders       : 
+                        <a href="#" class="country__borders">Malaysia, </a>
+                        <a href="#" class="country__borders">Malaysia, </a>
+                        <a href="#" class="country__borders">Malaysia, </a>
+                    </li>
                     <li class="country__data">Capital       : <span class="country__capital">Jakarta</span></li>
                     <li class="country__data">Continent     : <span class="country__continent">Asia</span></li>
                     <li class="country__data">Currencies    : <span class="country__curr">Rupiah</span></li>
@@ -101,8 +111,10 @@
             </div>
             
             <div class="map position-center hidden">
-                <img class="map__arrow-left" src="/src/assets/icons/icon-arrow-left.svg" alt="">
-            </div>
+                <svg class="map__arrow-left">
+                    <use href="/src/assets/icons/icons.svg#icon-arrow-left"></use>
+                </svg>
+            </div> -->
         </main>
 
         <footer class="footer">

@@ -1,30 +1,56 @@
 import searchView from "../view/SearchView";
+import ArticleView from "../view/ArticleView";
 import autoCompleteView from "../view/autoCompleteView";
+import CountryView from "../view/CountryView";
 import countries from "../model/Countries";
+import Country from "../model/Country";
 
 
 class Controller{
 
     constructor(){
-        autoCompleteView.addHandlerRenderAutoComplete(this.controlAutoComplete);
-        autoCompleteView.addHandlerCloseAutoComplete();
-        autoCompleteView.addHandlerFillSearchField();
+        autoCompleteView.addHandlerRenderAutoComplete(this._controlAutoComplete);
+        ArticleView.addHandlerPlayAndPauseVideo();
+        searchView.addHandlerRenderCountry(this._controlCountry);
     }
 
-    async controlAutoComplete(keyw = ""){
-        // 1. Render spinner
-        // autoCompleteView.renderSpinner();
-
-        //2. Load data
-        await countries.loadData(keyw);
-
-        //3. Render AutoComplete
-        // autoCompleteView.render(countries);
-
+    async _controlAutoComplete(keyw = "", visible){
+        try{
+            // 1. Render spinner
+            autoCompleteView.renderSpinner();   
+    
+            //2. Load data
+            await countries.loadData(keyw);
+            
+            //3. Set autocomplete visible
+            countries.setAutocompVisible(visible);
+            
+            //4. Render autoComplete
+            autoCompleteView.render(countries);
+        }catch(err){
+            console.err(err);
+        }
+        
     }
+        
+    async _controlCountry(){
+        try {
+            // 1. Get country id
+            // const id = window.location.hash.split("%20").join(" ").replace("#", "");
+            const id = window.location.hash;
+            console.log(id);
+            // 2. Render Spinner
+            CountryView.renderSpinner();
 
-    controlCountry(){
+            // 3. Load data
+            await Country.loadData(id);
 
+            // 4. Render Country
+            CountryView.render(Country);
+
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     controlAddBookmarks(){

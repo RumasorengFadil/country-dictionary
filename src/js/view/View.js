@@ -1,4 +1,4 @@
-import iconSpinner from "../../assets/icons/icon-spinner.svg";
+import icons from "../../assets/icons/icons.svg";
 class View {
   _data;
 
@@ -18,7 +18,9 @@ class View {
     this._parentEl.insertAdjacentHTML(
       "afterbegin",
       `<div class="spinner">
-        <img class="" src="${iconSpinner}" alt="">
+      <svg>
+      <use href="${icons}#icon-spinner"></use>
+      </svg>
     </div>`
     );
   }

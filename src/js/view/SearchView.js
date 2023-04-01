@@ -1,25 +1,25 @@
 import View from "./View";
-class SearchView extends View{
-    _parentEl = document.querySelector(".search");
-    _searchField = document.querySelector(".search_field");
-    _message;
-    _error;
+class SearchView extends View {
+  _parentEl = document.querySelector(".search");
+  _searchField = document.querySelector(".search__field");
+  _overlay = document.querySelector(".overlay");
+  _message;
+  _error;
 
-    // addHandlerRenderAutoComplete(handler){
-    //     this._parentEl.addEventListener("click", (function(e){
-    //         if(!e.target.classList.contains("search__field")) return;
+  addHandlerRenderCountry(handler){
+    this._parentEl.addEventListener("submit", function(e){
+      // e.preventDefault();
+      // if(!e.target.classList.contains("search__btn")) return;
+      console.log(this);
+      this.action = "#1234";
+    })
 
-    //         this._overlay.classList.remove("hidden");
-    //         handler();
-    //     }).bind(this));
-    // }
-    addHandlerRender
+  }
+  _generateMarkup() {
     
-    
-    _generateMarkup(){
-        
-    }
-
+  }
 }
-
+window.addEventListener("load", function(){
+  console.log(window.location.hash);
+})
 export default new SearchView();
