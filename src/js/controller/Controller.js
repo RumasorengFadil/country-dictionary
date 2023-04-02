@@ -11,7 +11,7 @@ class Controller{
     constructor(){
         autoCompleteView.addHandlerRenderAutoComplete(this._controlAutoComplete);
         ArticleView.addHandlerPlayAndPauseVideo();
-        searchView.addHandlerRenderCountry(this._controlCountry);
+        CountryView.addHandlerRenderCountry(this._controlCountry);
     }
 
     async _controlAutoComplete(keyw = "", visible){
@@ -37,13 +37,13 @@ class Controller{
         try {
             // 1. Get country id
             // const id = window.location.hash.split("%20").join(" ").replace("#", "");
-            const id = window.location.hash;
-            console.log(id);
+            const keyw = new URLSearchParams(window.location.search).get("inputCountry");
+
             // 2. Render Spinner
             CountryView.renderSpinner();
 
             // 3. Load data
-            await Country.loadData(id);
+            await Country.loadData(keyw);
 
             // 4. Render Country
             CountryView.render(Country);

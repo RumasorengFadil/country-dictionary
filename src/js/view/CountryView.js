@@ -1,5 +1,5 @@
 import View from "./View";
-
+import icons from "../../assets/icons/icons.svg"
 class CountryView extends View {
   _parentEl = document.querySelector(".main");
   _message;
@@ -22,26 +22,51 @@ class CountryView extends View {
       this._data.getCountry().region
     }</span></h2>
             <svg class="country__icn-location">
-                <use href="/src/assets/icons/icons.svg#icon-loc"></use>
+                <use href="${icons}#icon-loc"></use>
             </svg>
             <svg class="country__icn-bookmark">
-                <use href="/src/assets/icons/icons.svg#icon-bookmark-outline"></use>
+                <use href="${icons}#icon-bookmark-outline"></use>
             </svg>
         </div>
         <ul class="country__body">
             
             <li class="country__data">Borders       : 
-                ${this._data.getCountry().borders.map((b) => {
-                    return `<a href="#" class="country__borders">${b}</a>`
-                }).join(", ")}
+                ${
+                  this._data.getCountry().borders
+                    ? this._data
+                        .getCountry()
+                        .borders.map((b) => {
+                          return `<a href="#" class="country__borders">${b}</a>`;
+                        })
+                        .join(", ")
+                    : "Ukhnown"
+                }
             </li>
-            <li class="country__data">Capital       : <span class="country__capital">${this._data.getCountry().capital}</span></li>
-            <li class="country__data">Continent     : <span class="country__continent">${this._data.getCountry().continents}</span></li>
-            <li class="country__data">Currencies    : <span class="country__curr">${Object.values(this._data.getCountry().currencies)[0].name}</span></li>
-            <li class="country__data">Independent   : <span class="country__independent">Yes</span></li>
-            <li class="country__data">Languages     : <span class="country__lang">Indonesia</span></li>
-            <li class="country__data">Population    : <span class="country__popu">250jt</span></li>
-            <li class="country__data">Car           : <span class="country__car">Right</span></li>
+            <li class="country__data">Capital       : <span class="country__capital">${
+              this._data.getCountry().capital
+            }</span></li>
+            <li class="country__data">Continent     : <span class="country__continent">${
+              this._data.getCountry().continents
+            }</span></li>
+            <li class="country__data">Currencies    : <span class="country__curr">${
+              this._data.getCountry().languages
+                ? Object.values(this._data.getCountry().currencies)[0].name
+                : "Ukhnown"
+            }</span></li>
+            <li class="country__data">Independent   : <span class="country__independent">${
+              this._data.getCountry().independent ? "Yes" : "No"
+            }</span></li>
+            <li class="country__data">Languages     : <span class="country__lang">${
+              this._data.getCountry().languages
+                ? Object.values(this._data.getCountry().languages)
+                : "Ukhnown"
+            }</span></li>
+            <li class="country__data">Population    : <span class="country__popu">${
+              this._data.getCountry().population
+            }</span></li>
+            <li class="country__data">Car           : <span class="country__car">${
+              this._data.getCountry().car.side
+            }</span></li>
         </ul>
     </div>
     

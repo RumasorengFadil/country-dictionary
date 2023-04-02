@@ -8,10 +8,7 @@ class SearchView extends View {
 
   addHandlerRenderCountry(handler){
     this._parentEl.addEventListener("submit", function(e){
-      // e.preventDefault();
-      // if(!e.target.classList.contains("search__btn")) return;
-      console.log(this);
-      this.action = "#1234";
+     
     })
 
   }

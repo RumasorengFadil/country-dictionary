@@ -15,6 +15,7 @@ class View {
   }
 
   renderSpinner() {
+    this._clear();
     this._parentEl.insertAdjacentHTML(
       "afterbegin",
       `<div class="spinner">
