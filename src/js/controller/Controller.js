@@ -36,7 +36,6 @@ class Controller{
     async _controlCountry(){
         try {
             // 1. Get country id
-            // const id = window.location.hash.split("%20").join(" ").replace("#", "");
             const keyw = new URLSearchParams(window.location.search).get("inputCountry");
 
             // 2. Render Spinner
@@ -49,6 +48,7 @@ class Controller{
             CountryView.render(Country);
 
         } catch (err) {
+            CountryView.renderError();
             console.error(err);
         }
     }

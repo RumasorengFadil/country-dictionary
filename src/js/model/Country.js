@@ -43,11 +43,10 @@ class Country{
             }
 
         } catch (err) {
-            console.error(err);
+            throw err;
         }
     }
     getCountry(){
-        console.log(this._country);
         return this._country;
     }
 }

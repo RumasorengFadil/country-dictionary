@@ -25,6 +25,12 @@ class View {
     </div>`
     );
   }
+  renderError(){
+    this._clear();
+    this._parentEl.insertAdjacentHTML("afterbegin", `<div class="message">
+    <p>Country not found, <br>please try again</p>
+</div>`)
+  }
 }
 
 export default View;

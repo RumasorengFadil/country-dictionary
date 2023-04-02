@@ -8,6 +8,7 @@ class CountryView extends View {
 
   addHandlerRenderCountry(handler) {
     window.addEventListener("load", handler);
+    
   }
 
   _generateMarkup() {
