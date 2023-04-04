@@ -3,14 +3,13 @@ class SearchView extends View {
   _parentEl = document.querySelector(".search");
   _searchField = document.querySelector(".search__field");
   _overlay = document.querySelector(".overlay");
-  _message;
+  _message = "Country not found, <br>please try again";
   _error;
 
   addHandlerRenderCountry(handler){
     this._parentEl.addEventListener("submit", function(e){
      
     })
-
   }
   _generateMarkup() {
     

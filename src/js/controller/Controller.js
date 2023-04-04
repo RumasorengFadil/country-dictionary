@@ -37,6 +37,8 @@ class Controller{
         try {
             // 1. Get country id
             const keyw = new URLSearchParams(window.location.search).get("inputCountry");
+            
+            if(!keyw) return;
 
             // 2. Render Spinner
             CountryView.renderSpinner();

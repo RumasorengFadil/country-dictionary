@@ -2,13 +2,12 @@ import View from "./View";
 import icons from "../../assets/icons/icons.svg"
 class CountryView extends View {
   _parentEl = document.querySelector(".main");
-  _message;
+  _message = "Country not found, <br>please try again";
   _error;
   _succes;
 
   addHandlerRenderCountry(handler) {
     window.addEventListener("load", handler);
-    
   }
 
   _generateMarkup() {
@@ -26,7 +25,7 @@ class CountryView extends View {
                 <use href="${icons}#icon-loc"></use>
             </svg>
             <svg class="country__icn-bookmark">
-                <use href="${icons}#icon-bookmark-outline"></use>
+                <use href="${icons}#icon-bookmark-${this._data.getCountry().bookmarked ? "fill" : "outline"}"></use>
             </svg>
         </div>
         <ul class="country__body">
