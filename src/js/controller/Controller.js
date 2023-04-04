@@ -2,6 +2,7 @@ import searchView from "../view/SearchView";
 import ArticleView from "../view/ArticleView";
 import autoCompleteView from "../view/autoCompleteView";
 import CountryView from "../view/CountryView";
+import bookmarksView from "../view/bookmarksView";
 import countries from "../model/Countries";
 import Country from "../model/Country";
 
@@ -12,6 +13,7 @@ class Controller{
         autoCompleteView.addHandlerRenderAutoComplete(this._controlAutoComplete);
         ArticleView.addHandlerPlayAndPauseVideo();
         CountryView.addHandlerRenderCountry(this._controlCountry);
+        bookmarksView.addBookmark(this.controlAddBookmarks);
     }
 
     async _controlAutoComplete(keyw = "", visible){
@@ -55,8 +57,8 @@ class Controller{
         }
     }
 
-    controlAddBookmarks(){
-
+    _controlAddBookmarks(){
+        // if(!Country.getCountry().bookmarked) Country.getCountry().bookmarked = false;
     }
 
     controlMap(){

@@ -40,6 +40,7 @@ class Country{
                 timezones : dataJSON.timezones,
                 tld : dataJSON.tld,
                 translations : dataJSON.translations,
+                bookmarked : false,
             }
 
         } catch (err) {
@@ -48,6 +49,12 @@ class Country{
     }
     getCountry(){
         return this._country;
+    }
+    addBookmarks(){
+        
+    }
+    saveBookmarks(){
+        
     }
 }
 
