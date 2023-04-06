@@ -8,8 +8,22 @@ class CountryView extends View {
 
   addHandlerRenderCountry(handler) {
     window.addEventListener("load", handler);
+    window.addEventListener("hashchange", handler);
   }
-
+  addHandlerAddBookmark(handler){
+    this._parentEl.addEventListener("click", function(e){
+      if(!e.target.classList.contains("country__icn-bookmark")) return;
+      
+      handler();
+    })
+}
+addHandlerRenderMap(handler){
+  this._parentEl.addEventListener("click", function(e){
+    if(!e.target.classList.contains("country__icn-location")) return;
+    
+    handler();
+  })
+}
   _generateMarkup() {
     return `<div class="country position-center">
         <img class="country__flag" src=${

@@ -10,10 +10,21 @@ class View {
     this._clear();
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
+
   _clear() {
     this._parentEl.innerHTML = "";
   }
 
+  _generateErrorMarkup() {
+    return `<div class="error">
+    <p>${this._message}</p>
+</div>`;
+  }
+  _generateMessageMarkup() {
+    return `<div class="message">
+    <p>${this._message}</p>
+</div>`;
+  }
   renderSpinner() {
     this._clear();
     this._parentEl.insertAdjacentHTML(
@@ -25,11 +36,19 @@ class View {
     </div>`
     );
   }
-  renderError(){
+  renderError() {
     this._clear();
-    this._parentEl.insertAdjacentHTML("afterbegin", `<div class="message">
-    <p>${this._message}</p>
-</div>`)
+    this._parentEl.insertAdjacentHTML(
+      "afterbegin",
+      this._generateErrorMarkup()
+    );
+  }
+  renderMessage() {
+    this._clear();
+    this._parentEl.insertAdjacentHTML(
+      "afterbegin",
+      this._generateMessageMarkup()
+    );
   }
 }
 
