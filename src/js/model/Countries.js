@@ -1,3 +1,5 @@
+import { getJSON } from "../helper";
+
 class Countries{
   _names = [];
   constructor(){
@@ -13,8 +15,7 @@ class Countries{
       if(dataSessionStorage) return;
 
       // get data from API
-      const data = await fetch(`https://restcountries.com/v3.1/all`);
-      const dataJSON = await data.json();
+      const dataJSON = await getJSON(`https://restcountries.com/v3.1/all`);
       
       this._names = dataJSON.map(country =>{
         return country.name.common;     

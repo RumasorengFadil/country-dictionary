@@ -3,6 +3,7 @@ import articleView from "../view/ArticleView";
 import autoCompleteView from "../view/AutoCompleteView";
 import countryView from "../view/CountryView";
 import bookmarksView from "../view/bookmarksView";
+import MapView from "../view/MapView";
 import countries from "../model/Countries";
 import Country from "../model/Country";
 
@@ -12,10 +13,10 @@ class Controller{
     constructor(){
         autoCompleteView.addHandlerRenderAutoComplete(this._controlAutoComplete);
         articleView.addHandlerPlayAndPauseVideo();
-        bookmarksView.addHandlerRenderBookmarks(this._controlBookmarks);
         countryView.addHandlerRenderCountry(this._controlCountry);
         countryView.addHandlerAddBookmark(this._controlBookmarks);
-        countryView.addHandlerRenderMap(this._controlMap)
+        countryView.addHandlerRenderMap(this._controlMap);
+        MapView.addHandlerRenderCountry(this._controlCountry);
         searchView.addHandlerSubmit();
     }
 
@@ -44,19 +45,20 @@ class Controller{
             // 1. Get keyw
             const keyw = window.location.hash.slice(1);
             
+            // 2. Render Bookmarks
+            bookmarksView.render(Country);
+
             if(!keyw) return;
 
-            // 2. Render Spinner
+            // 3. Render Spinner
             countryView.renderSpinner();
 
-            // 3. Load data
+            // 4. Load data
             await Country.loadData(keyw);
 
-            // 4. Render Country
+            // 5. Render Country
             countryView.render(Country);
 
-            // 5. Render Bookmarks
-            bookmarksView.render(Country);
 
         } catch (err) {
             console.error(err);
@@ -86,7 +88,11 @@ class Controller{
     }
 
     _controlMap(){
+        //1. Render Map
+        MapView.render(Country);
 
-    }
+        //2. Load Map 
+        MapView.loadMap(Country);
+    }   
 }
 new Controller();

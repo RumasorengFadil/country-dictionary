@@ -1,4 +1,5 @@
 import { LOCAL_STORAGE_KEY } from "../config";
+import { getJSON } from "../helper";
 class Country{
     _country = {};
     _bookmarks = [];
@@ -8,12 +9,9 @@ class Country{
 
     async loadData(id){
         try {
-            console.log(1);
-            const data = await fetch(`https://restcountries.com/v3.1/name/${id}?fullText=true`);
+            // Get data from API
+            const [dataJSON] = await getJSON(`https://restcountries.com/v3.1/name/${id}?fullText=true`);
             
-            if(!data.ok) throw new Error();
-
-            const [dataJSON] = await data.json();
             this._country = {
                 altSpellings : dataJSON.altSpellings,
                 area : dataJSON.area,

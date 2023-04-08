@@ -6,9 +6,6 @@ class bookmarksView extends View {
   _succes;
   _message = "Bookmarks is empty";
 
-  addHandlerRenderBookmarks(handler){
-      window.addEventListener("hashchange", handler);
-  }
   _generateBookmarksMarkup() {
     return `${this._data
       .getBookmarks()

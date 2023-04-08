@@ -1,5 +1,5 @@
 import View from "./View";
-import icons from "../../assets/icons/icons.svg"
+import icons from "../../assets/icons/icons.svg";
 class CountryView extends View {
   _parentEl = document.querySelector(".main");
   _message = "Country not found, <br>please try again";
@@ -12,14 +12,15 @@ class CountryView extends View {
   }
   addHandlerAddBookmark(handler){
     this._parentEl.addEventListener("click", function(e){
-      if(!e.target.classList.contains("country__icn-bookmark")) return;
+      if(!e.target.closest(".country__icn-bookmark")) return;
       
       handler();
     })
 }
 addHandlerRenderMap(handler){
   this._parentEl.addEventListener("click", function(e){
-    if(!e.target.classList.contains("country__icn-location")) return;
+    if(!e.target.closest(".country__icn-location")) return;
+    
     
     handler();
   })
@@ -82,12 +83,6 @@ addHandlerRenderMap(handler){
               this._data.getCountry().car.side
             }</span></li>
         </ul>
-    </div>
-    
-    <div class="map position-center hidden">
-        <svg class="map__arrow-left">
-            <use href="/src/assets/icons/icons.svg#icon-arrow-left"></use>
-        </svg>
     </div>`;
   }
 }
