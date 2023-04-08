@@ -2,6 +2,7 @@
     box-shadow: 0 2px 4px 0 rgba($color-black, $alpha);
     width: 20rem;
     padding-bottom: 10px;
+    animation: kedip 0.5s;
     
     &__borders{
         text-decoration: none;
@@ -34,5 +35,15 @@
     &__data{
         list-style: none;
         padding: 0.16rem;
+    }
+}
+
+@keyframes kedip{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
     }
 }
