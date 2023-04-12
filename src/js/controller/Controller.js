@@ -77,11 +77,13 @@ class Controller{
             //3. Save bookmarks
             Country.saveBookmarks();
     
-            //4. Render Country
-            countryView.render(Country);
+            //4. Update Country
+            countryView.update(Country);
+            // countryView.render(Country);
     
             //5. Render Bookmarks
             bookmarksView.render(Country);
+
         } catch(err){
             console.error(err);
         }

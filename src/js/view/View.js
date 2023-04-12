@@ -50,6 +50,24 @@ class View {
       this._generateMessageMarkup()
     );
   }
+  update(data){
+    this._data = data;
+    const markup = this._generateMarkup();
+    
+    const newDOM = document.createRange().createContextualFragment(markup);
+    const newElements = newDOM.querySelectorAll("*");
+    const curElements = this._parentEl.querySelectorAll("*");
+
+    newElements.forEach((newEl, i) => {
+      const curEl = curElements[i];
+      if(!newEl.isEqualNode(curEl)){
+       [...newEl.attributes].forEach(attr =>{
+          curEl.setAttribute(attr.name, attr.value);
+        })
+      }
+
+    })
+  }
 }
 
 export default View;
