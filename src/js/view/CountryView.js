@@ -54,7 +54,7 @@ addHandlerRenderMap(handler){
                           return `<a href="#" class="country__borders">${b}</a>`;
                         })
                         .join(", ")
-                    : "Ukhnown"
+                    : "none"
                 }
             </li>
             <li class="country__data">Capital       : <span class="country__capital">${

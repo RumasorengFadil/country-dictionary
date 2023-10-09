@@ -6,7 +6,8 @@ import bookmarksView from "../view/bookmarksView";
 import MapView from "../view/MapView";
 import countries from "../model/Countries";
 import Country from "../model/Country";
-
+import "core-js/stable";
+import "regenerator-runtime";
 
 class Controller{
 
